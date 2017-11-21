@@ -14,6 +14,13 @@
 		CD3EAC5F1FA2E214002C76C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3EAC5D1FA2E214002C76C8 /* LaunchScreen.storyboard */; };
 		CD3EAC6A1FA2E214002C76C8 /* VoyozoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3EAC691FA2E214002C76C8 /* VoyozoTests.swift */; };
 		CD3EAC751FA2E214002C76C8 /* VoyozoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3EAC741FA2E214002C76C8 /* VoyozoUITests.swift */; };
+		CD3EAC851FA5FCEE002C76C8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3EAC841FA5FCEE002C76C8 /* Video.swift */; };
+		CD3EAC871FA604E0002C76C8 /* FinderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3EAC861FA604E0002C76C8 /* FinderTableViewController.swift */; };
+		CD3EAC8B1FA61FBB002C76C8 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3EAC8A1FA61FBB002C76C8 /* SearchTableViewController.swift */; };
+		CD3EAC8D1FA62D68002C76C8 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3EAC8C1FA62D68002C76C8 /* VideoTableViewController.swift */; };
+		CD3EAC8F1FA6AFD9002C76C8 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3EAC8E1FA6AFD9002C76C8 /* VideoDetailViewController.swift */; };
+		CD3EAC911FA6B790002C76C8 /* VideoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3EAC901FA6B790002C76C8 /* VideoWebViewController.swift */; };
+		CD487D0D1FB55AD7000C8D85 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD487D0C1FB55AD7000C8D85 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CD3EAC511FA2E214002C76C8 /* Voyozo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voyozo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD3EAC511FA2E214002C76C8 /* 보여줘.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "보여줘.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD3EAC541FA2E214002C76C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD3EAC561FA2E214002C76C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CD3EAC591FA2E214002C76C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,13 @@
 		CD3EAC701FA2E214002C76C8 /* VoyozoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoyozoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD3EAC741FA2E214002C76C8 /* VoyozoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoyozoUITests.swift; sourceTree = "<group>"; };
 		CD3EAC761FA2E214002C76C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD3EAC841FA5FCEE002C76C8 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		CD3EAC861FA604E0002C76C8 /* FinderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderTableViewController.swift; sourceTree = "<group>"; };
+		CD3EAC8A1FA61FBB002C76C8 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		CD3EAC8C1FA62D68002C76C8 /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
+		CD3EAC8E1FA6AFD9002C76C8 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		CD3EAC901FA6B790002C76C8 /* VideoWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWebViewController.swift; sourceTree = "<group>"; };
+		CD487D0C1FB55AD7000C8D85 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,7 @@
 		CD3EAC481FA2E214002C76C8 = {
 			isa = PBXGroup;
 			children = (
+				CD487D0C1FB55AD7000C8D85 /* Media.xcassets */,
 				CD3EAC531FA2E214002C76C8 /* Voyozo */,
 				CD3EAC681FA2E214002C76C8 /* VoyozoTests */,
 				CD3EAC731FA2E214002C76C8 /* VoyozoUITests */,
@@ -87,7 +102,7 @@
 		CD3EAC521FA2E214002C76C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD3EAC511FA2E214002C76C8 /* Voyozo.app */,
+				CD3EAC511FA2E214002C76C8 /* 보여줘.app */,
 				CD3EAC651FA2E214002C76C8 /* VoyozoTests.xctest */,
 				CD3EAC701FA2E214002C76C8 /* VoyozoUITests.xctest */,
 			);
@@ -103,6 +118,12 @@
 				CD3EAC5B1FA2E214002C76C8 /* Assets.xcassets */,
 				CD3EAC5D1FA2E214002C76C8 /* LaunchScreen.storyboard */,
 				CD3EAC601FA2E214002C76C8 /* Info.plist */,
+				CD3EAC841FA5FCEE002C76C8 /* Video.swift */,
+				CD3EAC861FA604E0002C76C8 /* FinderTableViewController.swift */,
+				CD3EAC8A1FA61FBB002C76C8 /* SearchTableViewController.swift */,
+				CD3EAC8C1FA62D68002C76C8 /* VideoTableViewController.swift */,
+				CD3EAC8E1FA6AFD9002C76C8 /* VideoDetailViewController.swift */,
+				CD3EAC901FA6B790002C76C8 /* VideoWebViewController.swift */,
 			);
 			path = Voyozo;
 			sourceTree = "<group>";
@@ -142,7 +163,7 @@
 			);
 			name = Voyozo;
 			productName = Voyozo;
-			productReference = CD3EAC511FA2E214002C76C8 /* Voyozo.app */;
+			productReference = CD3EAC511FA2E214002C76C8 /* 보여줘.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CD3EAC641FA2E214002C76C8 /* VoyozoTests */ = {
@@ -193,6 +214,7 @@
 				TargetAttributes = {
 					CD3EAC501FA2E214002C76C8 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = XRW8T68AQ5;
 						ProvisioningStyle = Automatic;
 					};
 					CD3EAC641FA2E214002C76C8 = {
@@ -234,6 +256,7 @@
 			files = (
 				CD3EAC5F1FA2E214002C76C8 /* LaunchScreen.storyboard in Resources */,
 				CD3EAC5C1FA2E214002C76C8 /* Assets.xcassets in Resources */,
+				CD487D0D1FB55AD7000C8D85 /* Media.xcassets in Resources */,
 				CD3EAC5A1FA2E214002C76C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3EAC871FA604E0002C76C8 /* FinderTableViewController.swift in Sources */,
+				CD3EAC8B1FA61FBB002C76C8 /* SearchTableViewController.swift in Sources */,
 				CD3EAC571FA2E214002C76C8 /* ViewController.swift in Sources */,
+				CD3EAC8F1FA6AFD9002C76C8 /* VideoDetailViewController.swift in Sources */,
+				CD3EAC851FA5FCEE002C76C8 /* Video.swift in Sources */,
+				CD3EAC911FA6B790002C76C8 /* VideoWebViewController.swift in Sources */,
+				CD3EAC8D1FA62D68002C76C8 /* VideoTableViewController.swift in Sources */,
 				CD3EAC551FA2E214002C76C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,11 +443,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XRW8T68AQ5;
 				INFOPLIST_FILE = Voyozo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cj.Voyozo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myapp.voyozo;
+				PRODUCT_NAME = "보여줘";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -426,11 +458,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XRW8T68AQ5;
 				INFOPLIST_FILE = Voyozo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cj.Voyozo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myapp.voyozo;
+				PRODUCT_NAME = "보여줘";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -507,6 +542,7 @@
 				CD3EAC7B1FA2E214002C76C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD3EAC7C1FA2E214002C76C8 /* Build configuration list for PBXNativeTarget "VoyozoTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +551,7 @@
 				CD3EAC7E1FA2E214002C76C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD3EAC7F1FA2E214002C76C8 /* Build configuration list for PBXNativeTarget "VoyozoUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +560,7 @@
 				CD3EAC811FA2E214002C76C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

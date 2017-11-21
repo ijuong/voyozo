@@ -7,89 +7,129 @@
 //
 
 import UIKit
+import Foundation
 
 class FinderTableViewController: UITableViewController {
+    
+    var finders:[String] = Array()
+    
+    func getFilePath(withFileName fileName:String) -> String {
+        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let docDir = dirPath[0] as NSString
+        let filePath = docDir.appendingPathComponent(fileName)
+        return filePath
+    }
+    
+    func setFile() {
+        let filePath = self.getFilePath(withFileName: "finders")
+        NSKeyedArchiver.archiveRootObject(self.finders, toFile: filePath)
+        //print("@@setfile: " + filePath)
+    }
+    
+    func getFile() {
+        let filePath = self.getFilePath(withFileName: "finders")
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: filePath) {
+            //print("@@file path: " + filePath)
+            if let finder = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [String] {
+                self.finders.append(contentsOf: finder)
+            }
+        } else {
+            //finders.append("뽀로로")
+            //finders.append("캐리언니")
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //파일조회
+        getFile()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return finders.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        //기본cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        //finder cell
+        if let finderCell = cell as? FinderTableViewCell {
+            let text = self.finders[indexPath.row]
+            
+            finderCell.finderLabel.text = text
+            
+            return finderCell
+            
+        }
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            finders.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            //file save
+            self.setFile()
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    @IBAction func FinderAdd(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "검색어 추가", message: "추가할 검색어를 입력하세요", preferredStyle: .alert)
+        alertController.addTextField{ (textField) in
+            textField.placeholder = "추가 검색어 입력"
+        }
+        
+        let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
+            let textField = alertController.textFields![0]
+            if let newFinderName = textField.text, newFinderName != "" {
+                self.finders.append(newFinderName)
+                let indexPath = IndexPath(row: self.finders.count - 1, section: 0)
+                self.tableView.insertRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                //file save
+                self.setFile()
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { _ in
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
+
+//cell에 대한 정보
+class FinderTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var finderLabel: UILabel!
+
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+}
+

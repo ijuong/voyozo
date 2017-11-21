@@ -8,28 +8,43 @@
 
 import UIKit
 
-class VideoWebViewController: UIViewController {
+class VideoWebViewController: UIViewController, UIWebViewDelegate {
 
+    var videoURL:String?
+
+    @IBOutlet weak var VideoWebView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard let youtubeURL = videoURL else {
+            return
+        }
+        
+        if let urlIns = URL(string: youtubeURL) {
+            let urlRequest = URLRequest(url: urlIns)
+            
+            self.VideoWebView.delegate = self
+            self.VideoWebView.allowsInlineMediaPlayback = false
+            self.VideoWebView.mediaPlaybackRequiresUserAction = false
+            self.VideoWebView.frame = self.VideoWebView.bounds
+            self.VideoWebView.scalesPageToFit = true
+            
+            self.VideoWebView.loadRequest(urlRequest)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    /*
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        print("@@start-----------")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        print("@@finish-----------")
+        //self.dismiss(animated: true, completion: nil)
     }
     */
-
 }

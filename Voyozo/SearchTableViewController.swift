@@ -10,86 +10,89 @@ import UIKit
 
 class SearchTableViewController: UITableViewController {
 
+    var searchList:[String] = Array()
+    
+    func getFilePath(withFileName fileName:String) -> String {
+        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let docDir = dirPath[0] as NSString
+        let filePath = docDir.appendingPathComponent(fileName)
+        return filePath
+    }
+    
+    func getFile() {
+        let filePath = self.getFilePath(withFileName: "finders")
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: filePath) {
+            if let search = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [String] {
+                self.searchList.append(contentsOf: search)
+            }
+        }
+    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //파일조회
+        getFile()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchList.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+        //finder cell
+        if let searchListCell = cell as? SearchTableViewCell {
+  
+            let text = self.searchList[indexPath.row]
+            let idx:String = String(indexPath.row % 10)
+            searchListCell.searchListLabel.text = text
+            searchListCell.searchListImageView.image = UIImage(named:"list" + idx)
+            
+            return searchListCell
+        }
 
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "listvc" {
+            
+            let cell = sender as? SearchTableViewCell
+            let vc = segue.destination as? VideoTableViewController
+            
+            guard let selectedCell = cell, let detailVC = vc else {
+                return
+            }
+            
+            detailVC.searchText = selectedCell.searchListLabel.text!
+        }
     }
-    */
+}
 
+//cell에 대한 정보
+class SearchTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var searchListLabel: UILabel!
+    
+    @IBOutlet weak var searchListImageView: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    } 
 }

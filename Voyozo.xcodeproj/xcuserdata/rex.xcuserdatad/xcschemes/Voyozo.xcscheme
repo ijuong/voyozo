@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CD3EAC501FA2E214002C76C8"
-               BuildableName = "Voyozo.app"
+               BuildableName = "&#x1107;&#x1169;&#x110b;&#x1167;&#x110c;&#x116f;.app"
                BlueprintName = "Voyozo"
                ReferencedContainer = "container:Voyozo.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD3EAC501FA2E214002C76C8"
-            BuildableName = "Voyozo.app"
+            BuildableName = "&#x1107;&#x1169;&#x110b;&#x1167;&#x110c;&#x116f;.app"
             BlueprintName = "Voyozo"
             ReferencedContainer = "container:Voyozo.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD3EAC501FA2E214002C76C8"
-            BuildableName = "Voyozo.app"
+            BuildableName = "&#x1107;&#x1169;&#x110b;&#x1167;&#x110c;&#x116f;.app"
             BlueprintName = "Voyozo"
             ReferencedContainer = "container:Voyozo.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD3EAC501FA2E214002C76C8"
-            BuildableName = "Voyozo.app"
+            BuildableName = "&#x1107;&#x1169;&#x110b;&#x1167;&#x110c;&#x116f;.app"
             BlueprintName = "Voyozo"
             ReferencedContainer = "container:Voyozo.xcodeproj">
          </BuildableReference>
